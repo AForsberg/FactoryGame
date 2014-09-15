@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlatformerCharacter2D : MonoBehaviour 
+public class Player : MonoBehaviour 
 {
 	public bool facingRight = true;							// For determining which way the player is currently facing.
 
@@ -105,10 +105,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		Debug.Log("hej" + col.gameObject.tag);
 
 		if (col.gameObject.tag == "Enemy") {
-			Debug.Log("asdasd");
 
 			// damage the player
 			Damage(10 ,col.transform);
@@ -116,13 +114,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 			//health = health - 10;
 
 			audio.Play();
-			Debug.Log("player health: " + health);
 		}
 	}
 
 	void Damage(int value, Transform enemy)
 	{
-		Debug.Log (value);
 		// imported from angry bots
 		// Make sure the player can't jump.
 		// playerControl.jump = false;

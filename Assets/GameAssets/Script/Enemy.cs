@@ -4,8 +4,10 @@ using System.Collections;
 public class Enemy : MonoBehaviour {
 
 	private float moveSpeed = 3f;
-
-	private int attack = 20;
+	[SerializeField] int attack = 20;
+	[SerializeField] int maxHealth = 100;
+	[SerializeField] int minHealth = 0;
+	[SerializeField] int currentHealth = 100;
 
 	GameObject player;
 	Transform playerTransform;
@@ -19,6 +21,15 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.position += (playerTransform.position - transform.position).normalized * moveSpeed * Time.deltaTime;
+	}
+
+	public void Damage(int val){
+		Debug.Log ("Damaged for: " + val);
+		currentHealth -= val;
+		if(currentHealth < minHealth){
+			Debug.Log("Enemy killed");
+			Destroy(gameObject);
+		}
 	}
 
 	public int getAttack ()

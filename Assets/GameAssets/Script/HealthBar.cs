@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HealthBar : MonoBehaviour {
 
-	private PlatformerCharacter2D platformerCharacter2D;
+	private Player player;
 
 	// Use this for initialization
 	void Start () {
@@ -13,17 +13,17 @@ public class HealthBar : MonoBehaviour {
 	void Awake()
 	{
 		// Setting up the references.
-		platformerCharacter2D = transform.root.GetComponent<PlatformerCharacter2D>();
+		player = transform.root.GetComponent<Player>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (platformerCharacter2D.getHealth ());
+		//Debug.Log (player.getHealth ());
 	}
 
 	void OnGUI () {
 		// Make a background box
-		int hp = platformerCharacter2D.getHealth ();
+		int hp = player.getHealth ();
 		GUI.Box(new Rect(10,10,100,90), hp.ToString());
 		
 		// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Laser : MonoBehaviour 
 {	
+	[SerializeField] int damage = 55;	//Damage value of laser.
 	
 	void Start () 
 	{
@@ -22,12 +23,17 @@ public class Laser : MonoBehaviour
 	
 	void OnTriggerEnter2D (Collider2D col) 
 	{
-		// If a crate hits an enemy...
+
+		//Debug.Log ("Hit: " + col.gameObject.tag);
+		// If a lazerz hits an enemy...
 		if(col.gameObject.tag == "Enemy")
 		{
 			col.gameObject.rigidbody2D.AddForce(gameObject.transform.rigidbody2D.velocity*2);
+			col.GetComponent<Enemy>().Damage(damage);
 		}
-		
+
+
+
 		// Destroy object hit by projectile.
 		// Destroy (col.gameObject);
 		

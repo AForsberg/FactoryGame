@@ -7,7 +7,7 @@ public class Gun : MonoBehaviour
 	public float speed = 20f;				// The speed the rocket will fire at.
 	
 	
-	private PlatformerCharacter2D platformerCharacter2D;		// Reference to the PlayerControl script.
+	private Player player;		// Reference to the PlayerControl script.
 	//private Animator anim;									// Reference to the Animator component.
 	
 	
@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour
 	{
 		// Setting up the references.
 		//anim = transform.root.gameObject.GetComponent<Animator>();
-		platformerCharacter2D = transform.root.GetComponent<PlatformerCharacter2D>();
+		player = transform.root.GetComponent<Player>();
 	}
 
 	
@@ -37,7 +37,7 @@ public class Gun : MonoBehaviour
 			Transform projectile_spawn = GameObject.FindGameObjectWithTag("projectile spawn").transform;
 
 			// If the player is facing right...
-			if(platformerCharacter2D.facingRight)
+			if(player.facingRight)
 			{
 				// ... instantiate the rocket facing right and set it's velocity to the right. 
 				Rigidbody2D bulletInstance = Instantiate(projectile_laser, projectile_spawn.position, Quaternion.Euler(new Vector3(0,0,0))) as Rigidbody2D;
