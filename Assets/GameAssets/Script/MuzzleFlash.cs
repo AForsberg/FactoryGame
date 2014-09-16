@@ -8,6 +8,7 @@ public class MuzzleFlash : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		renderer.enabled = false;
+		particleSystem.renderer.sortingLayerName = "Character";
 	}
 	
 	// Update is called once per frame
