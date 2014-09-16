@@ -103,17 +103,21 @@ public class Player : MonoBehaviour
 		transform.localScale = theScale;
 	}
 
+	public void Damage(int val)
+	{
+		health.Damage (val);
+		audio.Play();
+		}
+
+	/*
 	void OnCollisionEnter2D(Collision2D col)
 	{
 
-		if (col.gameObject.tag == "Enemy") {
-
-			// damage the player
-			health.Damage(10);
-
-			audio.Play();
-		}
+		if (col.gameObject.tag == "Enemy") 
+			Damage(10);// damage the player
+		
 	}
+	*/
 	
 }
 
