@@ -5,7 +5,7 @@ public class Gun : MonoBehaviour
 {
 	public Rigidbody2D projectile_laser;				// Prefab of the rocket.
 	public float speed = 20f;				// The speed the rocket will fire at.
-	
+	Transform muzzleFlash;
 	
 	private Player player;		// Reference to the PlayerControl script.
 	//private Animator anim;									// Reference to the Animator component.
@@ -17,7 +17,9 @@ public class Gun : MonoBehaviour
 		//anim = transform.root.gameObject.GetComponent<Animator>();
 		player = transform.root.GetComponent<Player>();
 	}
-
+	void Start(){
+		muzzleFlash = GameObject.FindGameObjectWithTag("MuzzleFlash").transform;//<MuzzleFlash>().Flash();
+	}
 	
 	void Update ()
 	{
@@ -49,7 +51,7 @@ public class Gun : MonoBehaviour
 				Rigidbody2D bulletInstance = Instantiate(projectile_laser, projectile_spawn.position, Quaternion.Euler(new Vector3(0,0,180f))) as Rigidbody2D;
 				bulletInstance.velocity = new Vector2(-speed, 0);
 			}
-
+			muzzleFlash.GetComponent<MuzzleFlash>().Flash();
 			audio.Play();
 		}
 	}
