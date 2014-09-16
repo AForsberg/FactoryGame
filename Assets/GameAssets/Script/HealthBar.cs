@@ -3,17 +3,16 @@ using System.Collections;
 
 public class HealthBar : MonoBehaviour {
 
-	private Player player;
+	private Health health;
 
 	// Use this for initialization
 	void Start () {
-	
+		health = GetComponent<Health> ();
 	}
 
 	void Awake()
 	{
 		// Setting up the references.
-		player = transform.root.GetComponent<Player>();
 	}
 	
 	// Update is called once per frame
@@ -23,8 +22,13 @@ public class HealthBar : MonoBehaviour {
 
 	void OnGUI () {
 		// Make a background box
-		int hp = player.getHealth ();
-		GUI.Box(new Rect(10,10,100,90), hp.ToString());
+		int hp = health.getCurrentHealth();
+		Transform transform = gameObject.transform;
+		Debug.Log (transform.position.x);
+		Vector3 temp = Camera.main.WorldToScreenPoint (transform.position);
+		//transform.position = Camera.main.WorldToScreenPoint(transform.position);
+		Debug.Log ("x:" + temp.x + " y: " + temp.y);
+		GUI.Box(new Rect(temp.x ,temp.y-100, 100,22), "Health: " + hp.ToString());
 		
 		// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
 		//if(GUI.Button(new Rect(20,40,80,20), "Level 1")) {

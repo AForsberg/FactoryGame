@@ -8,9 +8,7 @@ public class Player : MonoBehaviour
 	[SerializeField] float maxSpeed = 10f;				// The fastest the player can travel in the x axis.
 	[SerializeField] float jumpForce = 400f;			// Amount of force added when the player jumps.	
 
-	[SerializeField] int maxHealth = 100;
-	[SerializeField] int minHealth = 0;
-	[SerializeField] int health = 100;
+	private Health health;
 
 	[Range(0, 1)]
 	[SerializeField] float crouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -32,6 +30,8 @@ public class Player : MonoBehaviour
 		groundCheck = transform.Find("GroundCheck");
 		ceilingCheck = transform.Find("CeilingCheck");
 		anim = GetComponent<Animator>();
+
+		health = GetComponent<Health> ();
 	}
 
 
@@ -109,40 +109,10 @@ public class Player : MonoBehaviour
 		if (col.gameObject.tag == "Enemy") {
 
 			// damage the player
-			Damage(10 ,col.transform);
-
-			//health = health - 10;
+			health.Damage(10);
 
 			audio.Play();
 		}
-	}
-
-	void Damage(int value, Transform enemy)
-	{
-		// imported from angry bots
-		// Make sure the player can't jump.
-		// playerControl.jump = false;
-
-		// Create a vector that's from the enemy to the player with an upwards boost.
-		Vector3 hurtVector = transform.position - enemy.position + Vector3.up * 5f;
-
-		// Add a force to the player in the direction of the vector and multiply by the hurtForce.
-		rigidbody2D.AddForce (hurtVector * 10f);
-
-		// Remove some health from player
-		health = (health - 10);
-
-		Debug.Log ("damage" + health);
-
-		// Prevent health from becomming less then minHealth
-		if (health < minHealth) {
-				health = minHealth;
-		}
-	}
-
-	public int getHealth () 
-	{
-		return health;
 	}
 	
 }
