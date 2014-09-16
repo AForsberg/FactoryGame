@@ -4,6 +4,7 @@ using System.Collections;
 public class Laser : MonoBehaviour 
 {	
 	[SerializeField] int damage = 55;	//Damage value of laser.
+	public GameObject soundHit;
 	
 	void Start () 
 	{
@@ -23,8 +24,7 @@ public class Laser : MonoBehaviour
 	
 	void OnTriggerEnter2D (Collider2D col) 
 	{
-
-		//Debug.Log ("Hit: " + col.gameObject.tag);
+		
 		// If a lazerz hits an enemy...
 		if(col.gameObject.tag == "Enemy")
 		{
@@ -36,7 +36,10 @@ public class Laser : MonoBehaviour
 
 		// Destroy object hit by projectile.
 		// Destroy (col.gameObject);
-		
+
+		// create a sound where projectile is destroyed
+		GameObject soundObj = Instantiate(soundHit, transform.position, Quaternion.Euler(new Vector3(0,0,0))) as GameObject;
+
 		// ... destroy the projectile.
 		Destroy (gameObject);
 	}
