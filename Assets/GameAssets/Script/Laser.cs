@@ -8,10 +8,14 @@ public class Laser : MonoBehaviour
 	
 	void Start () 
 	{
-		// Destroy the rocket after 2 seconds if it doesn't get destroyed before then.
-		Destroy(gameObject, 2);
 	}
-	
+
+	void OnBecameInvisible () {
+
+		// Destroy bullet if it leaves the camera.
+		Destroy(gameObject);
+		Debug.Log ("Destroy: Bullet, outside camera");
+	}
 	
 	void OnExplode()
 	{
