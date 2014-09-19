@@ -52,15 +52,17 @@ public class Player : MonoBehaviour
 
 
 		// If crouching, check to see if the character can stand up
+		/*
 		if(!crouch && anim.GetBool("Crouch"))
 		{
 			// If the character has a ceiling preventing them from standing up, keep them crouching
 			if( Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
 				crouch = true;
 		}
+		*/
 
 		// Set whether or not the character is crouching in the animator
-		anim.SetBool("Crouch", crouch);
+		// anim.SetBool("Crouch", crouch);
 
 		//only control the player if grounded or airControl is turned on
 		if(grounded || airControl)
@@ -107,18 +109,7 @@ public class Player : MonoBehaviour
 	{
 		health.Damage (val);
 		audio.Play();
-		}
-
-	/*
-	void OnCollisionEnter2D(Collision2D col)
-	{
-
-		if (col.gameObject.tag == "Enemy") 
-			Damage(10);// damage the player
-		
-	}
-	*/
-	
+	}	
 }
 
 
