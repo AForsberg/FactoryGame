@@ -18,24 +18,8 @@ public class HealthBar : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		// Make a background box
-		/*
-		int hp = health.getCurrentHealth();
-		Transform transform = gameObject.transform;
-		Debug.Log (transform.position.x);
-		Vector3 temp = Camera.main.WorldToScreenPoint (transform.position);
-		//transform.position = Camera.main.WorldToScreenPoint(transform.position);
-		Debug.Log ("x:" + temp.x + " y: " + temp.y);
-		GUI.Box(new Rect(temp.x ,temp.y-100, 100,22), "Health: " + hp.ToString());
-		*/
-		// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-		//if(GUI.Button(new Rect(20,40,80,20), "Level 1")) {
-			//Application.LoadLevel(1);
-		//}
 		
-		// Make the second button.
-		//if(GUI.Button(new Rect(20,70,80,20), "Level 2")) {
-			//Application.LoadLevel(2);
-		//}
+		int hp = health.getCurrentHealth();
+		GUI.Box(new Rect(10 ,10, 200,22), "Player Health: " + hp.ToString());
 	}
 }

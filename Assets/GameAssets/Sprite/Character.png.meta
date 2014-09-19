@@ -1,17 +1,14 @@
 fileFormatVersion: 2
-guid: 9aa5a323eaf686645b5e1eebee574e3f
+guid: c3784f77701b95b47baedb3579d14627
 TextureImporter:
   fileIDToRecycleName:
-    21300000: prototyp
-    21300002: prototyp_0
-    21300004: prototyp_1
-    21300006: prototyp_2
-    21300008: prototyp_3
-    21300010: prototyp_4
-    21300012: prototyp_5
-    21300014: prototyp_6
-    21300016: prototyp_7
-    21300018: prototyp_8
+    21300000: Character
+    21300002: Character_0
+    21300004: Character_1
+    21300006: Character_2
+    21300008: Character_3
+    21300010: Character_4
+    21300012: Character_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,93 +50,63 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: prototyp_0
+    - name: Character_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 251
-        width: 63
-        height: 86
+        x: 20
+        y: 142
+        width: 145
+        height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: prototyp_1
+    - name: Character_1
       rect:
         serializedVersion: 2
-        x: 119
-        y: 252
-        width: 62
-        height: 82
+        x: 194
+        y: 148
+        width: 127
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: prototyp_2
+    - name: Character_2
       rect:
         serializedVersion: 2
-        x: 251
-        y: 197
-        width: 128
-        height: 149
+        x: 9
+        y: 70
+        width: 59
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: prototyp_3
+    - name: Character_3
       rect:
         serializedVersion: 2
-        x: 429
-        y: 169
-        width: 132
-        height: 150
+        x: 117
+        y: 23
+        width: 54
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: prototyp_4
+    - name: Character_4
       rect:
         serializedVersion: 2
-        x: 683
+        x: 207
         y: 26
-        width: 191
-        height: 304
+        width: 69
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: prototyp_5
+    - name: Character_5
       rect:
         serializedVersion: 2
-        x: 913
-        y: 10
-        width: 190
-        height: 334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: prototyp_6
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 126
-        width: 70
-        height: 81
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: prototyp_7
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 123
-        width: 66
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: prototyp_8
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 106
-        width: 134
-        height: 76
+        x: 9
+        y: 5
+        width: 82
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
