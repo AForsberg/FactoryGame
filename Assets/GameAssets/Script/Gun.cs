@@ -3,12 +3,13 @@ using System.Collections;
 
 public class Gun : MonoBehaviour
 {
-	public Rigidbody2D projectile;				// Prefab of the rocket.
-	public float speed = 20f;				// The speed the rocket will fire at.
+	public Rigidbody2D projectile;	// Prefab of the projectile.
+	public float speed = 20f;		// The speed the projectile will fire at.
+	Transform projectile_spawn;
 	Transform muzzleFlash;
 	
-	private Player player;		// Reference to the PlayerControl script.
-	//private Animator anim;									// Reference to the Animator component.
+	private Player player;			// Reference to the PlayerControl script.
+	//private Animator anim;		// Reference to the Animator component.
 	
 	
 	void Awake()
@@ -18,6 +19,7 @@ public class Gun : MonoBehaviour
 		player = transform.root.GetComponent<Player>();
 	}
 	void Start(){
+		projectile_spawn = GameObject.FindGameObjectWithTag("projectile spawn").transform;
 		muzzleFlash = GameObject.FindGameObjectWithTag("MuzzleFlash").transform;//<MuzzleFlash>().Flash();
 	}
 	
@@ -36,14 +38,12 @@ public class Gun : MonoBehaviour
 			//anim.SetTrigger("Shoot");
 			//audio.Play();
 
-			Transform projectile_spawn = GameObject.FindGameObjectWithTag("projectile spawn").transform;
-
 			// If the player is facing right...
 			if(player.facingRight)
 			{
 				// ... instantiate the rocket facing right and set it's velocity to the right. 
-				Rigidbody2D bulletInstance = Instantiate(projectile, projectile_spawn.position, Quaternion.Euler(new Vector3(0,0,0))) as Rigidbody2D;
-				bulletInstance.velocity = new Vector2(speed, 0);
+				Rigidbody2D projectileInstance = Instantiate(projectile, projectile_spawn.position, Quaternion.Euler(new Vector3(0,0,0))) as Rigidbody2D;
+				projectileInstance.velocity = new Vector2(speed, 0);
 			}
 			else
 			{
