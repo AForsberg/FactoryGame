@@ -15,8 +15,6 @@ public class Remove : MonoBehaviour
 			// ... destroy the player.
 			Destroy (col.gameObject);
 
-			// ... reload the level.
-			StartCoroutine("ReloadGame");
 		}
 		else
 		{
@@ -25,13 +23,6 @@ public class Remove : MonoBehaviour
 		}
 	}
 
-	IEnumerator ReloadGame()
-	{			
-		Debug.Log("restart in 2");
-		// ... pause briefly
-		yield return new WaitForSeconds(2);
-		// ... and then reload the level.
-		Application.LoadLevel(Application.loadedLevel);
-	}
+
 
 }

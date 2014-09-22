@@ -13,7 +13,7 @@ public class GameOverScript : MonoBehaviour {
 			buttonWidth,
 			buttonHeight),
 			"Retry!")){
-			Application.LoadLevel("scene1");
+			Application.LoadLevel(Application.loadedLevelName);
 		}
 
 		if(GUI.Button(new Rect(Screen.width / 2 - (buttonWidth / 2),
