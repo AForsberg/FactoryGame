@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Player : MonoBehaviour 
@@ -25,8 +25,6 @@ public class Player : MonoBehaviour
 	Animator anim;										// Reference to the player's animator component.
 	
 	public GameObject leftGrip;
-	public GameObject gun;
-
 
     void Awake()
 	{
@@ -37,9 +35,6 @@ public class Player : MonoBehaviour
 
 
 		health = GetComponent<Health> ();
-
-
-		setGun ();
 	}
 
 
@@ -126,12 +121,19 @@ public class Player : MonoBehaviour
 		transform.parent.gameObject.AddComponent<GameOverScript>();
 	}
 
-	public void setGun(){
+	public void setGun(GameObject gun){
+
+		// remove all childs from left grip
+		foreach (Transform child in leftGrip.transform) {
+			GameObject.Destroy(child.gameObject);
+		}
+
+
+
+
 		GameObject igun = Instantiate (gun) as GameObject;
 		igun.transform.parent = leftGrip.transform;
 		igun.transform.position = leftGrip.transform.position;
-
-
 	}
 }
 

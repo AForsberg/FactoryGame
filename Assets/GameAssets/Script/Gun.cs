@@ -20,28 +20,29 @@ public class Gun : MonoBehaviour
 		// Setting up the references.
 		//anim = transform.root.gameObject.GetComponent<Animator>();
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-
-		Debug.Log(player);
 	}
 	void Start(){
-		projectile_spawn = GameObject.FindGameObjectWithTag("projectile spawn").transform;
-		muzzleFlash = GameObject.FindGameObjectWithTag("MuzzleFlash").transform;
+
 		if(!autoWeapon){
 			shotrate = 0.5f;
 		}
 
-		cooldown = 0f;
+		cooldown = 0f;		
 	}
 	
 	void Update ()
 	{
+
 		if(cooldown > 0){
 			cooldown -= Time.deltaTime;
 		}
 		// If the fire button is pressed...
 		if(Input.GetKey(KeyCode.F) && canShoot())
 		{
-
+			if(projectile_spawn == null){
+				projectile_spawn = GameObject.FindGameObjectWithTag("projectile spawn").transform;
+				muzzleFlash = GameObject.FindGameObjectWithTag("MuzzleFlash").transform;
+			}
 			cooldown = shotrate;
 
 			// If the player is facing right...
