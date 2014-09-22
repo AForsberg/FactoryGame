@@ -23,23 +23,25 @@ public class Camera2DFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		// only update lookahead pos if accelerating or changed direction
-		float xMoveDelta = (target.position - lastTargetPosition).x;
 
-	    bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
+		if(target != null){
+			// only update lookahead pos if accelerating or changed direction
+			float xMoveDelta = (target.position - lastTargetPosition).x;
 
-		if (updateLookAheadTarget) {
-			lookAheadPos = lookAheadFactor * Vector3.right * Mathf.Sign(xMoveDelta);
-		} else {
-			lookAheadPos = Vector3.MoveTowards(lookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);	
+		    bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
+
+			if (updateLookAheadTarget) {
+				lookAheadPos = lookAheadFactor * Vector3.right * Mathf.Sign(xMoveDelta);
+			} else {
+				lookAheadPos = Vector3.MoveTowards(lookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);	
+			}
+			
+			Vector3 aheadTargetPos = target.position + lookAheadPos + Vector3.forward * offsetZ;
+			Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref currentVelocity, damping);
+			
+			transform.position = newPos;
+			
+			lastTargetPosition = target.position;	
 		}
-		
-		Vector3 aheadTargetPos = target.position + lookAheadPos + Vector3.forward * offsetZ;
-		Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref currentVelocity, damping);
-		
-		transform.position = newPos;
-		
-		lastTargetPosition = target.position;		
 	}
 }

@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if((playerTransform.position - transform.position).magnitude < 10){
+		if(playerTransform != null && (playerTransform.position - transform.position).magnitude < 10){
 			transform.position += (playerTransform.position - transform.position).normalized * moveSpeed * Time.deltaTime;
 		}
 	}
