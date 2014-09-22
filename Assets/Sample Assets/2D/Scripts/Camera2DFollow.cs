@@ -24,6 +24,7 @@ public class Camera2DFollow : MonoBehaviour {
 		lastTargetPosition = target.position;
 		offsetZ = (transform.position - target.position).z;
 		transform.parent = null;
+
 		maximum = 43;
 		minimum = 2.5f;
 
@@ -53,7 +54,7 @@ public class Camera2DFollow : MonoBehaviour {
 				lookAheadPos = Vector3.MoveTowards(lookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);	
 			}
 
-			transform.position = new Vector3(Mathf.Clamp(transform.position.x, minimum, maximum), transform.position.y, transform.position.z);
+			//transform.position = new Vector3(Mathf.Clamp(transform.position.x, minimum, maximum), transform.position.y, transform.position.z);
 
 			Vector3 aheadTargetPos = target.position + lookAheadPos + Vector3.forward * offsetZ;
 			Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref currentVelocity, damping);
