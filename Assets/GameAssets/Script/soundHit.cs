@@ -9,6 +9,7 @@ public class soundHit : MonoBehaviour {
 	void Start () {
 		particleSystem.renderer.sortingLayerName = "Character";
 		Destroy(gameObject, 1);
+		transform.Rotate(Time.deltaTime, -90, 0);
 	}
 	
 	// Update is called once per frame
