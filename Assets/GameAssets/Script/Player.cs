@@ -128,12 +128,20 @@ public class Player : MonoBehaviour
 			GameObject.Destroy(child.gameObject);
 		}
 
-
-
-
+		// Add a new gun
 		GameObject igun = Instantiate (gun) as GameObject;
+
+		// position the gun
 		igun.transform.parent = leftGrip.transform;
 		igun.transform.position = leftGrip.transform.position;
+
+		// flip weapon if player is flipped
+		if (!facingRight) {
+			// Multiply the weapons's x local scale by -1.
+			Vector3 theScale = igun.transform.localScale;
+			theScale.x *= -1;
+			igun.transform.localScale = theScale;
+		}
 	}
 }
 

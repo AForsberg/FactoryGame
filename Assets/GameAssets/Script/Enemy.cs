@@ -23,6 +23,12 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 		if(playerTransform != null && (playerTransform.position - transform.position).magnitude < 10){
 			transform.position += (playerTransform.position - transform.position).normalized * moveSpeed * Time.deltaTime;
+
+			// spinn the wheel
+			GetComponentInChildren<Spin>().off = false;
+		} else {
+			// stop spinning the wheel
+			GetComponentInChildren<Spin>().off = true;
 		}
 	}
 
