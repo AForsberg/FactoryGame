@@ -13,13 +13,14 @@ public class Camera2DFollow : MonoBehaviour {
 	Vector3 lastTargetPosition;
 	Vector3 currentVelocity;
 	Vector3 lookAheadPos;
-	SpriteRenderer backgroundSprite = GameObject.FindGameObjectWithTag("Background").transform.GetComponent<SpriteRenderer>();
+	SpriteRenderer backgroundSprite;
 
 	float minimum;
 	float maximum;
 	
 	// Use this for initialization
 	void Start () {
+		backgroundSprite = GameObject.FindGameObjectWithTag("Background").transform.GetComponent<SpriteRenderer>();
 		lastTargetPosition = target.position;
 		offsetZ = (transform.position - target.position).z;
 		transform.parent = null;
