@@ -31,11 +31,7 @@ public class Camera2DFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		Debug.Log (maximum);
-		Debug.Log("was here");
-		Debug.Log (Screen.width);
-		Debug.Log (target.transform.position.x);
+
 		/*if (target.transform.position.x - 2 < -14) {
 
 
