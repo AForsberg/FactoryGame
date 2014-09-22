@@ -21,7 +21,11 @@ public class Player : MonoBehaviour
 	bool grounded = false;								// Whether or not the player is grounded.
 	Transform ceilingCheck;								// A position marking where to check for ceilings
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
+
 	Animator anim;										// Reference to the player's animator component.
+	
+	public GameObject leftGrip;
+	public GameObject gun;
 
 
     void Awake()
@@ -31,7 +35,11 @@ public class Player : MonoBehaviour
 		ceilingCheck = transform.Find("CeilingCheck");
 		anim = GetComponent<Animator>();
 
+
 		health = GetComponent<Health> ();
+
+
+		setGun ();
 	}
 
 
@@ -116,6 +124,14 @@ public class Player : MonoBehaviour
 
 	void OnDestroy(){
 		transform.parent.gameObject.AddComponent<GameOverScript>();
+	}
+
+	public void setGun(){
+		GameObject igun = Instantiate (gun) as GameObject;
+		igun.transform.parent = leftGrip.transform;
+		igun.transform.position = leftGrip.transform.position;
+
+
 	}
 }
 
