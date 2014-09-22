@@ -16,7 +16,9 @@ public class Gun : MonoBehaviour
 	{
 		// Setting up the references.
 		//anim = transform.root.gameObject.GetComponent<Animator>();
-		player = transform.root.GetComponent<Player>();
+		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+		Debug.Log(player);
 	}
 	void Start(){
 		projectile_spawn = GameObject.FindGameObjectWithTag("projectile spawn").transform;

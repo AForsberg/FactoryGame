@@ -44,6 +44,9 @@ public class Player : MonoBehaviour
 
 		// Set the vertical animation
 		// anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
+		if(health.isDead()){
+			Destroy(gameObject);
+		}
 	}
 
 
@@ -110,6 +113,10 @@ public class Player : MonoBehaviour
 		health.Damage (val);
 		audio.Play();
 	}	
+
+	void OnDestroy(){
+		transform.parent.gameObject.AddComponent<GameOverScript>();
+	}
 }
 
 
