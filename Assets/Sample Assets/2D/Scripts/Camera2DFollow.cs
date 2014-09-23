@@ -20,7 +20,7 @@ public class Camera2DFollow : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		backgroundSprite = GameObject.FindGameObjectWithTag("Background").transform.GetComponent<SpriteRenderer>();
+//		backgroundSprite = GameObject.FindGameObjectWithTag("Background").transform.GetComponent<SpriteRenderer>();
 		lastTargetPosition = target.position;
 		offsetZ = (transform.position - target.position).z;
 		transform.parent = null;
@@ -58,8 +58,6 @@ public class Camera2DFollow : MonoBehaviour {
 
 			Vector3 aheadTargetPos = target.position + lookAheadPos + Vector3.forward * offsetZ;
 			Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref currentVelocity, damping);
-
-
 
 			transform.position = newPos;
 

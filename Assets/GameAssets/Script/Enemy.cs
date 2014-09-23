@@ -25,10 +25,10 @@ public class Enemy : MonoBehaviour {
 			transform.position += (playerTransform.position - transform.position).normalized * moveSpeed * Time.deltaTime;
 
 			// spinn the wheel
-			GetComponentInChildren<Spin>().off = false;
+			//GetComponentInChildren<Spin>().off = false;
 		} else {
 			// stop spinning the wheel
-			GetComponentInChildren<Spin>().off = true;
+//			GetComponentInChildren<Spin>().off = true;
 		}
 	}
 
