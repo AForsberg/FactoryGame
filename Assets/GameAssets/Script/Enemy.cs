@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour {
 	public float moveSpeed = 3f;
 	[SerializeField] int attack = 20;
 
+	Animator anim;
+
 	private Health health;
 
 	GameObject player;
@@ -15,6 +17,7 @@ public class Enemy : MonoBehaviour {
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		playerTransform = player.transform;
+		anim = GetComponent<Animator>();
 
 		health = GetComponent<Health> ();
 	}
@@ -25,10 +28,10 @@ public class Enemy : MonoBehaviour {
 			transform.position += (playerTransform.position - transform.position).normalized * moveSpeed * Time.deltaTime;
 
 			// spinn the wheel
-			//GetComponentInChildren<Spin>().off = false;
+			anim.SetBool("Move", true);
 		} else {
 			// stop spinning the wheel
-//			GetComponentInChildren<Spin>().off = true;
+			anim.SetBool("Move", false);
 		}
 	}
 
