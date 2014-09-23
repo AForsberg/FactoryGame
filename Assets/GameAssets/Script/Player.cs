@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 	{
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
-		anim.SetBool("Ground", grounded);
+		// anim.SetBool("Ground", grounded);
 
 		// Set the vertical animation
 		// anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
 			move = (crouch ? move * crouchSpeed : move);
 
 			// The Speed animator parameter is set to the absolute value of the horizontal input.
-			anim.SetFloat("Speed", Mathf.Abs(move));
+			// anim.SetFloat("Speed", Mathf.Abs(move));
 
 			// Move the character
 			rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         // If the player should jump...
         if (grounded && jump) {
             // Add a vertical force to the player.
-            anim.SetBool("Ground", false);
+            // anim.SetBool("Ground", false);
             rigidbody2D.AddForce(new Vector2(0f, jumpForce));
         }
 	}
