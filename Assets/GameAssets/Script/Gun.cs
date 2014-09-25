@@ -43,6 +43,7 @@ public class Gun : MonoBehaviour
 				projectile_spawn = GameObject.FindGameObjectWithTag("projectile spawn").transform;
 				muzzleFlash = GameObject.FindGameObjectWithTag("MuzzleFlash").transform;
 			}
+
 			cooldown = shotrate;
 
 			// If the player is facing right...
