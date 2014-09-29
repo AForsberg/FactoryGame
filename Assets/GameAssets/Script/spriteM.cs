@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 // @NOTE the attached sprite's position should be "top left" or the children will not align properly
@@ -6,7 +6,6 @@ using System.Collections;
 [RequireComponent (typeof (SpriteRenderer))]
 
 // Generates a nice set of repeated sprites inside a streched sprite renderer
-// @NOTE Vertical only, you can easily expand this to horizontal with a little tweaking
 public class spriteM : MonoBehaviour {
 	SpriteRenderer sprite;
 	
