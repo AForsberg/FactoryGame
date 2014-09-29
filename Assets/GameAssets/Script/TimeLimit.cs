@@ -21,6 +21,6 @@ public class TimeLimit : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		GUI.Box(new Rect(210, 10, 250, 22), "Time left: " + (int)timeLimit);
+		GUI.Box(new Rect(210, 10, 200, 22), "Time left: " + (int)timeLimit);
 	}
 }
