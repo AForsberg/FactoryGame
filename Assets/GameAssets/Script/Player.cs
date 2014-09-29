@@ -143,6 +143,10 @@ public class Player : MonoBehaviour
 			igun.transform.localScale = theScale;
 		}
 	}
+
+	public void Heal(int val){
+		health.Heal (val);
+	}
 }
 
 
