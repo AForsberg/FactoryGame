@@ -14,7 +14,6 @@ public class Laser : MonoBehaviour
 
 		// Destroy bullet if it leaves the camera.
 		Destroy(gameObject);
-		Debug.Log ("Destroy: Bullet, outside camera");
 	}
 	
 	void OnExplode()

@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: fa5d4c6b52af647ebb156108876a726f
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: robot1_pusher_0
+    21300002: robot1_pusher_1
+    21300004: robot1_pusher_2
+    21300006: robot1_pusher_3
+    21300008: robot1_pusher_4
+    21300010: robot1_pusher_5
+    21300012: robot1_pusher_6
+    21300014: robot1_pusher_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: robot1_pusher_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 322
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robot1_pusher_1
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 279
+        width: 162
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robot1_pusher_2
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 270
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robot1_pusher_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 213
+        width: 73
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robot1_pusher_4
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 132
+        width: 129
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robot1_pusher_5
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 146
+        width: 103
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robot1_pusher_6
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 35
+        width: 57
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robot1_pusher_7
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 9
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
