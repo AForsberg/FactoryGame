@@ -5,12 +5,14 @@ public class ObjectSpawner : MonoBehaviour {
 
 	public GameObject obj; // the object to spawn
 	public float time_spawnRate = 5; // spawn every "time_spawnRate" sec
+	public bool infSpawn = false;
 	public int maxSpawn = 4; // maximum number of objects the spawner will spawn.
 	public float speedX;
 	public float speedY;
 
 	float cooldown = 0f;
 	int spawnCounter = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -21,8 +23,10 @@ public class ObjectSpawner : MonoBehaviour {
 	void Update () {
 
 		// self destruct if all object is spawned - then this object isn't needed anymore.
-		if (spawnCounter == maxSpawn) {
-			Destroy(gameObject);
+		if (infSpawn = false) {
+			if (spawnCounter == maxSpawn) {
+				Destroy (gameObject);
+			}
 		}
 
 		if(cooldown > 0){
