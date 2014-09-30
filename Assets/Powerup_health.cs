@@ -5,6 +5,8 @@ public class Powerup_health : MonoBehaviour {
 
 	public int health = 50;
 	private bool locked;
+	public float time_selfDestruct = 1f;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -26,10 +28,10 @@ public class Powerup_health : MonoBehaviour {
 			renderer.enabled = false;
 			
 			// play some powerup sound
-			// audio.Play ();
+			audio.Play ();
 			
 			// selfdestruct object
-			Destroy(gameObject);
+			Destroy(gameObject, time_selfDestruct);
 		}
 	}
 }
