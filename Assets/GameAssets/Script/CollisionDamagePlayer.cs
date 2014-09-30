@@ -7,12 +7,10 @@ public class CollisionDamagePlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
 	void OnCollisionEnter2D(Collision2D col)
@@ -24,8 +22,7 @@ public class CollisionDamagePlayer : MonoBehaviour {
 
 			// damage the player
 			col.gameObject.GetComponent<Player>().Damage(damage);
-
-			// Damage(damage);
+			
 		}
 	}
 }

@@ -17,8 +17,7 @@ public class Health : MonoBehaviour {
 	
 	}
 
-	public void Damage(int val)
-	{
+	public void Damage(int val) {
 		// reduce currentHealth
 		currentHealth -= val;
 
@@ -28,8 +27,7 @@ public class Health : MonoBehaviour {
 
 	}
 
-	public void Heal(int val)
-	{
+	public void Heal(int val) {
 		// reduce currentHealth
 		currentHealth += val;
 		

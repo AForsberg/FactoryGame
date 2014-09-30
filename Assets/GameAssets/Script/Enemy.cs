@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour {
 		if(playerTransform != null && (playerTransform.position - transform.position).magnitude < 10){
 			transform.position += (playerTransform.position - transform.position).normalized * moveSpeed * Time.deltaTime;
 
+			
+
 			// spinn the wheel
 			anim.SetBool("Move", true);
 		} else {
@@ -38,7 +40,7 @@ public class Enemy : MonoBehaviour {
 	public void Damage(int val)
 	{
 
-		// remove som health
+		// remove some health
 		health.Damage (val);
 
 		// Check if dead and Destroy if dead
