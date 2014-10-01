@@ -23,13 +23,17 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (playerTransform == null) {
+			return;
+		}
+
 		if(facingRight && (playerTransform.position.x < transform.position.x)){
 			Flip ();
 		}else if(!facingRight && (playerTransform.position.x > transform.position.x)){
 			Flip ();
 		}
 
-		if(playerTransform != null && (playerTransform.position - transform.position).magnitude < 10){
+		if((playerTransform.position - transform.position).magnitude < 10){
 			transform.position += (playerTransform.position - transform.position).normalized * moveSpeed * Time.deltaTime;			
 			// spinn the wheel
 			anim.SetBool("Move", true);
