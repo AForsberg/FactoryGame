@@ -3,13 +3,12 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-	public float moveSpeed = 3f;
 	[SerializeField] int attack = 20;
-
-	Animator anim;
-
+	public float moveSpeed = 3f;
+	private bool facingRight = false;
 	private Health health;
 
+	Animator anim;
 	GameObject player;
 	Transform playerTransform;
 
@@ -24,17 +23,30 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(facingRight && (playerTransform.position.x < transform.position.x)){
+			Flip ();
+		}else if(!facingRight && (playerTransform.position.x > transform.position.x)){
+			Flip ();
+		}
+
 		if(playerTransform != null && (playerTransform.position - transform.position).magnitude < 10){
-			transform.position += (playerTransform.position - transform.position).normalized * moveSpeed * Time.deltaTime;
-
-			
-
+			transform.position += (playerTransform.position - transform.position).normalized * moveSpeed * Time.deltaTime;			
 			// spinn the wheel
 			anim.SetBool("Move", true);
 		} else {
 			// stop spinning the wheel
 			anim.SetBool("Move", false);
 		}
+	}
+
+	void Flip(){
+		// Switch the way the player is labelled as facing.
+		facingRight = !facingRight;
+		
+		// Multiply the player's x local scale by -1.
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 
 	public void Damage(int val)
