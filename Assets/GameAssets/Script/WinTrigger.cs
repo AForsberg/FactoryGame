@@ -14,6 +14,8 @@ public class WinTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		Application.LoadLevel("menu");
+		if(col.gameObject.tag == "Player"){
+			Application.LoadLevel("menu");
+		}
 	}
 }
