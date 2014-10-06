@@ -8,7 +8,9 @@ using System.Collections;
 // Generates a nice set of repeated sprites inside a streched sprite renderer
 public class spriteM : MonoBehaviour {
 	SpriteRenderer sprite;
-	
+
+	public string sortingLayer = "Foreground";
+
 	void Awake () {
 		// Get the current sprite with an unscaled size
 		sprite = GetComponent<SpriteRenderer>();
@@ -19,15 +21,21 @@ public class spriteM : MonoBehaviour {
 		SpriteRenderer childSprite = childPrefab.AddComponent<SpriteRenderer>();
 		childPrefab.transform.position = transform.position;
 		childSprite.sprite = sprite.sprite;
-		childSprite.sortingLayerName = "Foreground";
+		childSprite.sortingLayerName = sortingLayer;
 		
 		// Loop through and spit out repeated tiles
 		GameObject child;
+
 		for (int i = 0, l = (int)Mathf.Round(sprite.bounds.size.x); i < l; i++) {
 			for (int j = 0, m = (int)Mathf.Round(sprite.bounds.size.y); j < m; j++) {
+
+				// create new tile
 				child = Instantiate(childPrefab) as GameObject;
+				// set x,y position
 				child.transform.position = transform.position - (new Vector3(spriteSize.x*i, spriteSize.y*j, 0));
+				// set parent
 				child.transform.parent = transform;
+
 			}
 		}
 
