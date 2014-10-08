@@ -23,7 +23,8 @@ public class Player : MonoBehaviour
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
 
 	Animator anim;										// Reference to the player's animator component.
-	
+	public GameObject deadPlayer;
+
 	public GameObject leftGrip;
 
     void Awake()
@@ -48,7 +49,7 @@ public class Player : MonoBehaviour
 		// Set the vertical animation
 		// anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
 		if(health.isDead()){
-			Destroy(gameObject);
+			KillPlayer();
 		}
 	}
 
@@ -155,6 +156,11 @@ public class Player : MonoBehaviour
 
 	public void Heal(int val){
 		health.Heal (val);
+	}
+
+	public void KillPlayer() {
+		GameObject newDeadPlayer = Instantiate (deadPlayer, transform.position, Quaternion.identity) as GameObject;
+		Destroy(gameObject);
 	}
 }
 
