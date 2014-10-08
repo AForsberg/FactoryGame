@@ -10,6 +10,7 @@ public class TriggerEnemy : MonoBehaviour {
 	private bool active = false;
 
 	Animator anim;
+	public GameObject deadRobot;
 	GameObject player;
 	Transform playerTransform;
 	
@@ -80,6 +81,12 @@ public class TriggerEnemy : MonoBehaviour {
 			Debug.Log("Enemy killed");
 			Destroy(gameObject);
 		}
+	}
+
+	public void KillEnemy() {
+		GameObject newDeadRobot = Instantiate (deadRobot, gameObject.transform.position, Quaternion.identity) as GameObject;
+		Destroy (newDeadRobot, 1);
+		Destroy(gameObject);
 	}
 	
 	public int getAttack ()

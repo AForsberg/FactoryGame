@@ -10,6 +10,7 @@ public class spriteM : MonoBehaviour {
 	SpriteRenderer sprite;
 
 	public string sortingLayer = "Foreground";
+	//public float rotationY = 0;
 
 	void Awake () {
 		// Get the current sprite with an unscaled size
@@ -33,6 +34,8 @@ public class spriteM : MonoBehaviour {
 				child = Instantiate(childPrefab) as GameObject;
 				// set x,y position
 				child.transform.position = transform.position - (new Vector3(spriteSize.x*i, spriteSize.y*j, 0));
+				//rotate
+				//child.transform.Rotate(new Vector3(0,0,rotationY));
 				// set parent
 				child.transform.parent = transform;
 

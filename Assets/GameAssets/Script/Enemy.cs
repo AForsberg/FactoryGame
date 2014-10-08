@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
 	public float moveSpeed = 3f;
 	private bool facingRight = false;
 	private Health health;
+	public GameObject deadRobot;
 
 	Animator anim;
 	GameObject player;
@@ -69,7 +70,7 @@ public class Enemy : MonoBehaviour {
 		// Check if dead and Destroy if dead
 		if(health.isDead()){
 			Debug.Log("Enemy killed");
-			Destroy(gameObject);
+			KillEnemy();
 		}
 	}
 
@@ -78,4 +79,9 @@ public class Enemy : MonoBehaviour {
 		return attack;
 	}
 
+	public void KillEnemy() {
+		GameObject newDeadRobot = Instantiate (deadRobot, gameObject.transform.position, Quaternion.identity) as GameObject;
+		Destroy (newDeadRobot, 1);
+		Destroy(gameObject);
+	}
 }

@@ -35,11 +35,6 @@ public class Laser : MonoBehaviour
 			col.GetComponent<Enemy>().Damage(damage);
 		}
 
-
-
-		// Destroy object hit by projectile.
-		// Destroy (col.gameObject);
-
 		// create a sound where projectile is destroyed
 		GameObject soundObj = Instantiate(soundHit, transform.position, Quaternion.Euler(new Vector3(0,0,0))) as GameObject;
 
