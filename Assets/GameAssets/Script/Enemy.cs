@@ -53,6 +53,13 @@ public class Enemy : MonoBehaviour {
 		transform.localScale = theScale;
 	}
 
+	void OnCollisionEnter2D(Collision2D col){
+		if (col.gameObject.tag == "Player") {
+			// damage the player
+			col.gameObject.GetComponent<Player>().Damage(attack);
+		}
+	}
+
 	public void Damage(int val)
 	{
 
