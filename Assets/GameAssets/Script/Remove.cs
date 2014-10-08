@@ -12,6 +12,8 @@ public class Remove : MonoBehaviour
 			// .. stop the camera tracking the player
 			GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera2DFollow>().enabled = false;
 
+			audio.Play();
+
 			// ... destroy the player.
 			Destroy (col.gameObject);
 
