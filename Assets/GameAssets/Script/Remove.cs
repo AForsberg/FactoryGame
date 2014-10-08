@@ -15,7 +15,7 @@ public class Remove : MonoBehaviour
 			audio.Play();
 
 			// ... destroy the player.
-			Destroy (col.gameObject);
+			Destroy (col.gameObject, 2);
 
 		}
 		else

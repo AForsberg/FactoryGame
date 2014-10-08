@@ -40,6 +40,7 @@ public class ObjectSpawner : MonoBehaviour {
 
 			// spawn an object
 			GameObject newObjectInstance = Instantiate(obj, transform.position, Quaternion.Euler(new Vector3(0,0,0))) as GameObject;
+			Destroy(newObjectInstance, 4);
 
 			// apply the speed
 			newObjectInstance.rigidbody2D.velocity = new Vector2(speedX, speedY);

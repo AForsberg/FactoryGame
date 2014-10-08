@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
 	}
 
 	void OnDestroy(){
-		transform.parent.gameObject.AddComponent<GameOverScript>();
+		GameObject.FindGameObjectWithTag("World").AddComponent<GameOverScript>();
 	}
 
 	public void setGun(GameObject gun){
