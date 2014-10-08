@@ -33,8 +33,7 @@ public class Player : MonoBehaviour
 		groundCheck = transform.Find("GroundCheck");
 		ceilingCheck = transform.Find("CeilingCheck");
 		anim = GetComponent<Animator>();
-
-
+		
 		health = GetComponent<Health> ();
 	}
 
@@ -160,6 +159,7 @@ public class Player : MonoBehaviour
 
 	public void KillPlayer() {
 		GameObject newDeadPlayer = Instantiate (deadPlayer, transform.position, Quaternion.identity) as GameObject;
+		Debug.Log ("killP");
 		Destroy(gameObject);
 	}
 }
