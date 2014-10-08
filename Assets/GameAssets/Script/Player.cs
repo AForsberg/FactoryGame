@@ -115,9 +115,16 @@ public class Player : MonoBehaviour
 
 	public void Damage(int val)
 	{
+		StartCoroutine (Wait ());
 		health.Damage (val);
 		audio.Play();
 	}	
+
+	IEnumerator Wait() {
+		anim.SetBool ("Hurt", true);
+		yield return new WaitForSeconds (0.5f);
+		anim.SetBool ("Hurt", false);
+	}
 
 	void OnDestroy(){
 		transform.parent.gameObject.AddComponent<GameOverScript>();
