@@ -18,7 +18,7 @@ public class Spin : MonoBehaviour
 	void Update() {
 
 		if (!off) {
-			transform.Rotate (Vector3.forward * speed);
+			transform.Rotate (Vector3.forward * Time.deltaTime * speed);
 		}
 	}
 }
