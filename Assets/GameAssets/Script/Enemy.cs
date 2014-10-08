@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour {
 			Flip ();
 		}
 
-		if((playerTransform.position - transform.position).magnitude < 10){
+		if((playerTransform.position - transform.position).magnitude < 20){
 			transform.position += (playerTransform.position - transform.position).normalized * moveSpeed * Time.deltaTime;			
 			// spinn the wheel
 			anim.SetBool("Move", true);

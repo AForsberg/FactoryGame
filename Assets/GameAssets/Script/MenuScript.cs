@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MenuScript : MonoBehaviour {
 
+	public string levelToStart;
 
 	void OnGUI(){
 		const int buttonWidth = 100;
@@ -11,7 +12,7 @@ public class MenuScript : MonoBehaviour {
 		Rect menuButton = new Rect(Screen.width / 2 - (buttonWidth/2), (2*Screen.height / 3) - (buttonHeight / 2), buttonWidth, buttonHeight);
 
 		if(GUI.Button(menuButton, "Start Game!")){
-			Application.LoadLevel("scene1");
+			Application.LoadLevel(levelToStart);
 		}
 	}
 }
