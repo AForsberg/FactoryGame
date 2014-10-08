@@ -20,14 +20,14 @@ public class CollisionDamagePlayer : MonoBehaviour {
 		if (!on) {
 			return;
 		}
-		
+
+
 		if (col.gameObject.tag == "Player") {
-
-			Debug.Log("damage");
-
 			// damage the player
 			col.gameObject.GetComponent<Player>().Damage(damage);
-			
+		} else if (col.gameObject.tag == "Enemy") {
+			// damage the player
+			col.gameObject.GetComponent<Enemy>().Damage(damage);
 		}
 	}
 
