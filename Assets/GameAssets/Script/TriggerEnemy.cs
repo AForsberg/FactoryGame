@@ -79,7 +79,7 @@ public class TriggerEnemy : MonoBehaviour {
 		// Check if dead and Destroy if dead
 		if(health.isDead()){
 			Debug.Log("Enemy killed");
-			Destroy(gameObject);
+			KillEnemy();
 		}
 	}
 

@@ -11,11 +11,14 @@ public class TimeLimit : MonoBehaviour {
 
 	private GameObject player;
 
+	private GUIStyle style;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
 		soundWarning = soundCountdownStart;
+		style = new GUIStyle();
+		style.fontSize = 40;
 	}
 	
 	// Update is called once per frame
@@ -25,6 +28,7 @@ public class TimeLimit : MonoBehaviour {
 		// +1 make first beep appear at sound soundCountdownStart.
 		// timeLimit > 0 removes the last beep. (Don't want beep and explosion sound at the same time)
 		if (timeLimit <= soundWarning + 1 && timeLimit > 0) { 
+			style.normal.textColor = Color.red;
 			// set next beep for next sec.
 			soundWarning --;
 			// play some sound (beep)
@@ -46,6 +50,6 @@ public class TimeLimit : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		GUI.Box(new Rect(210, 10, 200, 22), "Time left: " + (int)timeLimit);
+		GUI.Box(new Rect((Screen.width / 2) - 100, (Screen.height * 3/4) , 200, 40), "Time left: " + (int)timeLimit, style);
 	}
 }
