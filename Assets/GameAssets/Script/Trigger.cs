@@ -17,7 +17,7 @@ public class Trigger : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag == "Player") {
-			enemy.GetComponent<TriggerEnemy>().setActive();
+			enemy.GetComponent<Enemy>().setActive();
 		}
 	}
 }

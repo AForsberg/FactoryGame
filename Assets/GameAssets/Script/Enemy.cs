@@ -5,8 +5,9 @@ public class Enemy : MonoBehaviour {
 
 	[SerializeField] int attack = 20;
 	public float moveSpeed = 3f;
-	private bool facingRight = false;
+	public bool facingRight = false;
 	private Health health;
+	public bool active;
 	public GameObject deadRobot;
 
 	Animator anim;
@@ -24,6 +25,11 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (!active) {
+			return;
+		}
+		
 		if (playerTransform == null) {
 			return;
 		}
@@ -59,6 +65,10 @@ public class Enemy : MonoBehaviour {
 			// damage the player
 			col.gameObject.GetComponent<Player>().Damage(attack);
 		}
+	}
+
+	public void setActive() {
+		active = true;
 	}
 
 	public void Damage(int val)
