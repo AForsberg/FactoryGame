@@ -27,6 +27,10 @@ public class Laser : MonoBehaviour
 	
 	void OnTriggerEnter2D (Collider2D col) 
 	{
+
+		if (col.gameObject.tag == "Powerup") {
+			return;
+		}
 		
 		// If a lazerz hits an enemy...
 		if(col.gameObject.tag == "Enemy")

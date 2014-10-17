@@ -50,6 +50,6 @@ public class TimeLimit : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		GUI.Box(new Rect((Screen.width / 2) - 100, (Screen.height * 3/4) , 200, 40), "Time left: " + (int)timeLimit, style);
+		GUI.Box(new Rect((Screen.width / 2) - 100, (Screen.height * 4/5) , 200, 40), "Time left: " + (int)timeLimit, style);
 	}
 }

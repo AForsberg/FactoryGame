@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 065b3de22bcfa404ba1c6824d24deee2
+guid: 361fe6f906d813d45b95807ff65598c2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: dynamite
+    21300000: bomb
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
