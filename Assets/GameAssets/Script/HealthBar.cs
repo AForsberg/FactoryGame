@@ -3,10 +3,14 @@ using System.Collections;
 
 public class HealthBar : MonoBehaviour {
 
-	public Health health; 
+	public Health health;
+	private GUIStyle style; 
 
 	// Use this for initialization
 	void Start () {
+		style = new GUIStyle();
+		style.fontSize = 30;
+		style.normal.textColor = Color.green;
 	}
 
 	void Awake()
@@ -20,6 +24,6 @@ public class HealthBar : MonoBehaviour {
 	void OnGUI () {
 		
 		int hp = health.getCurrentHealth();
-		GUI.Box(new Rect(10 ,10, 200,22), "Player Health: " + hp.ToString());
+		GUI.Box(new Rect(10 ,10, 200,22), "Player Health: " + hp.ToString(), style);
 	}
 }
